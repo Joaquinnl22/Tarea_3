@@ -1,0 +1,7 @@
+version: 3.8
+
+services:
+    casandra1:
+      image: bitnami/cassandra:latest
+      volumes:
+        - /path/to/cassandra-persistence:/bitnami
