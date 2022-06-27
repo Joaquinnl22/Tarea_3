@@ -1,15 +1,31 @@
-version: 3.8
-
+version: '3.8'
 services:
-    casandra1:
-      image: bitnami/cassandra:4.0.4\
-    volume:
-      - ./db.cql:/docker-entrypoint-initdb.d
-    enviroment:
+  cassandranodo1:
+    image: bitnami/cassandra:4.0.4
+    environment:
       - CASSANDRA_CLUSTER_NAME=cassandra-cluster
-      - CASSANDRA_SEEDS=cassandra-node1,cassandra-node2,cassandra-node3
-      - CASSANDRA_SEEDS=cassandra-node1
+      - CASSANDRA_SEEDS=cassandranodo1,cassandranodo2,cassandranodo3 
+      - CASSANDRA_SEEDS=cassandranodo1 
       - CASSANDRA_PASSWORD_SEEDER=yes
       - CASSANDRA_PASSWORD=password123
       - MAX_HEAP_SIZE=512M
       - HEAP_NEWSIZE=100M
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+
+  cassandranodo2:
+    image: bitnami/cassandra:4.0.4
+    environment:
+      - CASSANDRA_CLUSTER_NAME=cassandra-cluster
+      - CASSANDRA_SEEDS=cassandranodo1,cassandranodo2,cassandranodo3 
+      - CASSANDRA_PASSWORD=password123
+      - MAX_HEAP_SIZE=512M
+      - HEAP_NEWSIZE=100M
+  cassandranodo3:
+    image: bitnami/cassandra:4.0.4
+    environment:
+      - CASSANDRA_CLUSTER_NAME=cassandra-cluster
+      - CASSANDRA_SEEDS=cassandranodo1,cassandranodo2,cassandranodo3 
+      - CASSANDRA_PASSWORD=password123 
+      - MAX_HEAP_SIZE=512M
+      - HEAP_NEWSIZE=100M     
