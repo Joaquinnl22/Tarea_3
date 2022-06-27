@@ -35,10 +35,12 @@ http :// l o c a l h o s t :3000/ edit [ post ]
 10 }
 ```
 ## Editar Receta
-```
+
 ~~~
 http :// l o c a l h o s t :3000/ delete [ post ]
 ~~~
+```
+
 {
 2 "id": 1,
 3 "comentario": "Amigdalitis aguda",
