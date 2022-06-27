@@ -28,4 +28,9 @@ services:
       - CASSANDRA_SEEDS=cassandranodo1,cassandranodo2,cassandranodo3 
       - CASSANDRA_PASSWORD=password123 
       - MAX_HEAP_SIZE=512M
-      - HEAP_NEWSIZE=100M     
+      - HEAP_NEWSIZE=100M   
+   api:
+    build: .
+    port:
+      -3000:3000
+      
