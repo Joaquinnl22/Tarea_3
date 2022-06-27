@@ -18,6 +18,10 @@ docker-compose up
 # Informacion del repositorio
 
 ## Creaci ́on de Receta
+
+~~~
+http :// l o c a l h o s t :3000/ edit [ post ]
+~~~
 ```
 1 {
 2 "nombre": "Melon",
@@ -32,6 +36,9 @@ docker-compose up
 ```
 ## Editar Receta
 ```
+~~~
+http :// l o c a l h o s t :3000/ delete [ post ]
+~~~
 {
 2 "id": 1,
 3 "comentario": "Amigdalitis aguda",
@@ -40,6 +47,9 @@ docker-compose up
 6 }
 ```
 ## Eliminar Receta
+~~~
+http :// l o c a l h o s t :3000/ create [ post ]
+~~~
 ```
 1 {
 2 "id": 1
